@@ -24,21 +24,21 @@ const pristine = new Pristine(adForm, {
 
 // Валидация для заголовка объявления
 const titleField = adForm.querySelector('[name="title"]');
-const titleMinLength = 30;
-const titleMaxLength = 100;
-const titleFieldError = `От ${titleMinLength} до ${titleMaxLength} символов`;
+const MIN_TITLE_LENGTH = 30;
+const MAX_TITLE_LENGTH = 100;
+const titleFieldError = `От ${MIN_TITLE_LENGTH} до ${MAX_TITLE_LENGTH} символов`;
 
-const validateTitle = (value) => value.length >= titleMinLength && value.length <= titleMaxLength;
+const validateTitle = (value) => value.length >= MIN_TITLE_LENGTH && value.length <= MAX_TITLE_LENGTH;
 
 pristine.addValidator(titleField, validateTitle, titleFieldError);
 
 // Валидация для цены объявления
 const priceField = adForm.querySelector('[name="price"]');
-const minPrice = 1;
-const maxPrice = 100000;
-const priceFieldError = `Число от ${minPrice} до ${maxPrice}`;
+const MIN_PRICE = 1;
+const MAX_PRICE = 100000;
+const priceFieldError = `Число от ${MIN_PRICE} до ${MAX_PRICE}`;
 
-const validatePrice = (value) => value >= minPrice && value <= maxPrice;
+const validatePrice = (value) => value >= MIN_PRICE && value <= MAX_PRICE;
 
 pristine.addValidator(priceField, validatePrice, priceFieldError);
 

@@ -55,7 +55,7 @@ const createAd = (id) => {
       checkout: getRandomArrayElement(CHECKOUT),
       features: getRandomArrayLength(FEATURES),
       description: 'На балконе лежат колбасные шкурки',
-      photos: getRandomArrayLength(PHOTOS)
+      photos: getRandomArrayLength(PHOTOS),
     },
     location,
   };
